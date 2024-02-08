@@ -9,9 +9,11 @@ try:
     with open(filename, 'rb') as f:
         betalinger = pickle.load(f)
     print("Data indlæst fra fil.")
+    print(betalinger)
 except (FileNotFoundError, EOFError):
     betalinger = {}
     print("Ingen tidligere data fundet. Opret ny opsparingsordning.")
+
 
 class HomePage(tk.Frame):
     def __init__(self, parent, controller):
@@ -90,7 +92,14 @@ class RegisterPayment(tk.Frame):
         else:
             betalinger[medlem_navn] = belob
 
+        # Saving Data in file
+        with open(filename, 'wb') as f:
+            pickle.dump(betalinger, f)
+            print("Data saved on file.")
+
         print(f"{medlem_navn} har nu indbetalt i alt {betalinger[medlem_navn]:.2f} kr.")
+
+
 
         # Clear entry fields after registration
         self.medlem_navn_entry.delete(0, tk.END)
@@ -107,7 +116,7 @@ class ListPayments(tk.Frame):
         # Create the table
         self.table = ttk.Treeview(self)
         self.table["columns"] = ("Medlem", "Indbetalt", "Mangler")
-        self.table.heading("#0", text="Medlem")
+        self.table["show"] = "headings"
         self.table.heading("Medlem", text="Medlem")
         self.table.heading("Indbetalt", text="Indbetalt")
         self.table.heading("Mangler", text="Mangler")
@@ -120,9 +129,16 @@ class ListPayments(tk.Frame):
         button.pack()
 
     def update_table(self):
+        # Clear existing data in the table
+        self.table.delete(*self.table.get_children())
+
         for medlem, indbetalt in betalinger.items():
             mangler = max(0, 4500 - indbetalt)
-            self.table.insert("", "end", text=medlem, values=(medlem, f"{indbetalt:.2f} kr.", f"{mangler:.2f} kr."))
+            self.table.insert("", "end", values=(medlem, f"{indbetalt:.2f} kr.", f"{mangler:.2f} kr."))
+
+        # Center the text in all columns
+        for col in self.table["columns"]:
+            self.table.column(col, anchor="center")
 
 class WorstPayers(tk.Frame):
     def __init__(self, parent, controller):
@@ -135,7 +151,7 @@ class WorstPayers(tk.Frame):
         # Create the table
         self.table = ttk.Treeview(self)
         self.table["columns"] = ("Medlem", "Mangler")
-        self.table.heading("#0", text="Medlem")
+        self.table["show"] = "headings"
         self.table.heading("Medlem", text="Medlem")
         self.table.heading("Mangler", text="Mangler")
         self.table.pack(fill="both", expand=True)
@@ -147,10 +163,17 @@ class WorstPayers(tk.Frame):
         button.pack()
 
     def update_table(self):
+        # Clear existing data in the table
+        self.table.delete(*self.table.get_children())
+
         top_tre_manglende = sorted(betalinger, key=lambda x: 4500 - betalinger[x], reverse=True)[:3]
         for medlem in top_tre_manglende:
             mangler = max(0, 4500 - betalinger[medlem])
-            self.table.insert("", "end", text=medlem, values=(medlem, f"{mangler:.2f} kr."))
+            self.table.insert("", "end", values=(medlem, f"{mangler:.2f} kr."))
+
+        # Center the text in all columns
+        for col in self.table["columns"]:
+            self.table.column(col, anchor="center")
 
 
 class SinglePageApp(tk.Tk):
@@ -179,6 +202,10 @@ class SinglePageApp(tk.Tk):
         # Show a frame for the given page name
         frame = self.frames[page_name]
         frame.tkraise()
+
+        # Update the table if the frame is ListPayments or WorstPayers
+        if page_name == "ListPayments" or page_name == "WorstPayers":
+            frame.update_table()
 
 
 if __name__ == "__main__":
