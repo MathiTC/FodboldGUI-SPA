@@ -17,9 +17,9 @@ For at køre denne applikation kræves følgende:
 - Tkinter, som er en standard GUI (Grafisk Brugergrænseflade) pakke til Python, er nødvendig. Tkinter følger normalt med Python-installationen, men hvis det ikke er tilfældet, kan det installeres separat.
 - Derudover bruges ingen eksterne biblioteker ud over de indbyggede `tkinter` og `pickle`.
 
-## Single Page Application (SPA)
+## Single Page Application (SPA)-lignende funktionalitet
 
-Applikationen er designet som en Single Page Application (SPA), hvilket betyder, at den kører i en enkelt HTML-side uden at skulle genindlæse hele siden under brug. I dette tilfælde, i stedet for HTML og JavaScript, er applikationen udviklet ved hjælp af Python's Tkinter-bibliotek.
+Applikationen er designet med en lignende struktur som en Single Page Application (SPA), hvor alt indhold præsenteres inden for det samme grafiske brugergrænsefladevindue. Selvom det ikke er en traditionel HTML-baseret SPA, følger det samme principper med hensyn til at præsentere og navigere mellem forskellige dele af applikationen inden for et enkelt vindue. Dette giver en sømløs brugeroplevelse og gør det nemt at organisere og adskille forskellige funktioner i applikationen.
 
 Fordelene ved at bruge en SPA-arkitektur inkluderer:
 
@@ -36,5 +36,5 @@ Applikationen gemmer betalinger i en pickle-fil med navnet `betalinger.pk`. Når
 - **Pickle**: Python `pickle`-modulet bruges til at gemme og indlæse data fra en fil. Det tillader serialisering og deserialisering af Python-objekter, hvilket gør det let at gemme og genindlæse komplekse datastrukturer som en dictionary i dette tilfælde.
 
 
-
+## Disclaimer
 Bemærk: Denne README-fil er delvist genereret ved hjælp af AI. Selvom den er udarbejdet med omhu og nøjagtighed, kan visse dele være standardiserede eller automatiserede. Vi opfordrer til at læse og forstå indholdet grundigt og tilpasse det efter behov og specifikke krav til dit projekt.
