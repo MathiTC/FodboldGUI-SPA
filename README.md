@@ -43,4 +43,4 @@ Applikationen gemmer betalinger i en pickle-fil med navnet `betalinger.pk`. Når
 
 
 ## Disclaimer
-Bemærk: Denne README-fil er delvist genereret ved hjælp af AI. Selvom den er udarbejdet med omhu og nøjagtighed, kan visse dele være standardiserede eller automatiserede. Vi opfordrer til at læse og forstå indholdet grundigt og tilpasse det efter behov og specifikke krav til dit projekt.
+Bemærk: Denne README-fil er delvist genereret ved hjælp af AI. Selvom den er udarbejdet med omhu og nøjagtighed, kan visse dele være standardiserede eller automatiserede. Der opfordrers til at læse og forstå indholdet grundigt og tilpasse det efter behov og specifikke krav til dit projekt.
