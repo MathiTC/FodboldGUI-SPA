@@ -23,9 +23,15 @@ Applikationen er designet med en lignende struktur som en Single Page Applicatio
 
 Fordelene ved at bruge en SPA-arkitektur inkluderer:
 
-- Hurtig og mere flydende brugeroplevelse, da kun delvise opdateringer af indholdet er nødvendige.
-- Reduceret belastning på serveren, da den kun sender data, ikke hele HTML-sider, til klienten.
-- Bedre organisering af kode og adskillelse af ansvar, da hvert "page" er en separat klasse eller modul.
+- Brugervenlighed og fokus: Applikationen giver en brugervenlig oplevelse ved at holde alt indhold inden for det samme vindue. Dette eliminerer behovet for at jonglere mellem flere åbne vinduer, hvilket reducerer forvirring og holder brugeren fokuseret på den aktuelle opgave.
+- 
+- Reduceret kompleksitet: Ved at begrænse interaktionen til et enkelt vindue reduceres kompleksiteten i brugergrænsefladen. Dette gør det lettere for brugerne at navigere og forstå systemet uden at skulle bekymre sig om flere åbne vinduer eller skærme.
+
+Ulemper
+- Begrænset multitasking: Brugere kan ikke have flere forskellige opgaver åbne eller kørende samtidig inden for samme applikationsvindue. Dette kan være en ulempe for dem, der er vant til at arbejde med flere applikationer eller vinduer samtidig.
+
+- Manglende fleksibilitet: Single Window Application begrænser brugernes mulighed for at tilpasse layoutet eller organisere deres arbejdsområde efter deres præferencer. Dette kan være frustrerende for dem, der foretrækker en mere tilpasset eller fleksibel arbejdsoplevelse.
+
 
 ## Datahåndtering
 
