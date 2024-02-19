@@ -19,7 +19,7 @@ For at køre denne applikation kræves følgende:
 
 ## Single Page Application (SPA)-lignende funktionalitet
 
-Applikationen er designet med en lignende struktur som en Single Page Application (SPA), hvor alt indhold præsenteres inden for det samme grafiske brugergrænsefladevindue. Selvom det ikke er en traditionel HTML-baseret SPA, følger det samme principper med hensyn til at præsentere og navigere mellem forskellige dele af applikationen inden for et enkelt vindue. Dette giver en sømløs brugeroplevelse og gør det nemt at organisere og adskille forskellige funktioner i applikationen.
+Applikationen er designet med en lignende struktur som en Single Page Application (SPA), hvor alt indhold præsenteres inden for det samme grafiske brugergrænsefladevindue. Selvom det ikke er en traditionel HTML-baseret SPA, følger det samme principper med hensyn til at præsentere og navigere mellem forskellige dele af applikationen inden for et enkelt vindue. Dette giver en flydende brugeroplevelse og gør det nemt at organisere og adskille forskellige funktioner i applikationen.
 
 Fordelene ved at bruge en SPA-arkitektur inkluderer:
 
